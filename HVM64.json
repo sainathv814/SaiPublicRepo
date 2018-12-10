@@ -3,7 +3,7 @@
 
   "Mappings" : {
     "RegionMap" : {
-      "us-east-1"        : {"HVM64" : "ami-090d1c5f1054493e6"}
+      "us-east-1"        : {"HVM64" : "ami-0da19d4527d55af09"}
     }
   },
 
@@ -12,7 +12,7 @@
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
         "ImageId" : { "Fn::FindInMap" : [ "RegionMap", { "Ref" : "AWS::Region" }, "HVM64"]},
-        "InstanceType" : "m1.small"
+        "InstanceType" : "t2.micro"
       }
     }
   }
