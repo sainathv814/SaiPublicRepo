@@ -1,0 +1,19 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Mappings" : {
+    "RegionMap" : {
+      "us-east-1"        : {"HVM64" : "ami-090d1c5f1054493e6"}
+    }
+  },
+
+  "Resources" : {
+    "myEC2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "ImageId" : { "Fn::FindInMap" : [ "RegionMap", { "Ref" : "AWS::Region" }, "HVM64"]},
+        "InstanceType" : "m1.small"
+      }
+    }
+  }
+}
